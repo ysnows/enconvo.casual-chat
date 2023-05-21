@@ -38,6 +38,6 @@ description: Casual chat with ai
 async: false
 shortName: ''
 homePage: https://github.com/ysnows/enconvo.casual-chat
-appCast: ''
+appCast: 'https://raw.githubusercontent.com/ysnows/enconvo.casual-chat/main/appcast.json'
 shortCut: ''
 minAppVersion: ''

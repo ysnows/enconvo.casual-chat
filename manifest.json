@@ -1,6 +1,6 @@
 {
   "author" : "enconvo",
-  "appCast" : "",
+  "appCast" : "https://raw.githubusercontent.com/ysnows/enconvo.casual-chat/main/appcast.json",
   "logo" : "sparkles",
   "homePage" : "https:\/\/github.com\/ysnows\/enconvo.casual-chat",
   "extensionId" : "enconvo.casual-chat",
