@@ -1,0 +1,10 @@
+{
+  "author" : "enconvo",
+  "appCast" : "",
+  "logo" : "sparkles",
+  "homePage" : "https:\/\/github.com\/ysnows\/enconvo.casual-chat",
+  "extensionId" : "enconvo.casual-chat",
+  "name" : "Casual Chat",
+  "description" : "Casual chat with ai",
+  "version" : "0.0.1"
+}

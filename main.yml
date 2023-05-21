@@ -1,0 +1,43 @@
+name: Casual Chat
+version: 0.0.1
+author: enconvo
+on: {}
+steps:
+- name: ''
+  uses: prompt
+  env:
+    Output:
+      type: bool
+      value: 'true'
+      sort: 3
+      messages: []
+    Model:
+      type: enum
+      value: gpt-3.5-turbo
+      sort: 0
+      messages: []
+    Messages:
+      type: messages
+      value: ''
+      sort: 2
+      messages:
+      - role: system
+        content: Casual Chat
+      - role: user
+        content: '{{contextText|copiedText}}'
+      - role: user
+        content: '{{text}}'
+    Temperature:
+      type: enum
+      value: '0.9'
+      sort: 1
+      messages: []
+extensionId: enconvo.casual-chat
+logo: sparkles
+description: Casual chat with ai
+async: false
+shortName: ''
+homePage: https://github.com/ysnows/enconvo.casual-chat
+appCast: ''
+shortCut: ''
+minAppVersion: ''
