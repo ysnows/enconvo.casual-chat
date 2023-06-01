@@ -1,6 +1,11 @@
 {
   "identifier": "enconvo.blog",
   "versions": [
-
+    {
+      "version": "0.0.4",
+      "desc": "feat: 1. 优化",
+      "url": "https://github.com/ysnows/enconvo.casual-chat/releases/download/v0.0.4/enconvo.casual-chat.enconvoplugin",
+      "minAppVersion": "1.1.8"
+    }
   ]
 }
