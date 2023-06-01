@@ -1,5 +1,5 @@
 name: Casual Chat
-version: 0.0.3
+version: 0.0.4
 author: enconvo
 on: {}
 steps:
@@ -39,5 +39,4 @@ async: false
 shortName: ''
 homePage: https://github.com/ysnows/enconvo.casual-chat
 appCast: https://raw.githubusercontent.com/ysnows/enconvo.casual-chat/main/appcast.json
-shortCut: ''
-minAppVersion: ''
+minAppVersion: 1.2.1
