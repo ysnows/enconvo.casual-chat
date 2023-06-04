@@ -7,13 +7,13 @@ steps:
     uses: prompt
     env:
       Temperature:
-        type: enum
+        type: temperature
         value: '1.0'
         sort: 1
         messages: [ ]
       Model:
-        type: enum
-        value: gpt-3.5-turbo
+        type: llmModel
+        value: enconvo.chatgpt|--|gpt-3.5-turbo
         sort: 0
         messages: [ ]
       Messages:
@@ -23,6 +23,10 @@ steps:
         messages:
           - role: system
             content: Casual Chat
+          - role: user
+            content: '{{contextText|copiedText}}'
+          - role: user
+            content: '{{text}}'
 extensionId: enconvo.casual-chat
 logo: sparkles
 description: Casual chat with ai
@@ -33,27 +37,6 @@ minAppVersion: 1.2.1
 flowType: prompt
 sort: 5
 options:
-  - title: Model Settings
-    items:
-      - identifier: temperature
-        type: menu
-        title: Temperature
-        defaultValue: '1.0'
-        menuValues:
-          - title: 'none'
-            value: '0.0'
-          - title: 'low'
-            value: '0.5'
-          - title: 'medium'
-            value: '1.0'
-          - title: 'high'
-            value: '1.5'
-          - title: 'maximum'
-            value: '2.0'
-      - identifier: model
-        type: llmModel
-        title: LLM Model
-        defaultValue: 'llm.default|--|default'
   - title: General
     items:
       - identifier: Alias
