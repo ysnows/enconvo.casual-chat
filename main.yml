@@ -34,7 +34,7 @@ async: false
 homePage: https://github.com/ysnows/enconvo.casual-chat
 appCast: https://raw.githubusercontent.com/ysnows/enconvo.casual-chat/main/appcast.json
 minAppVersion: 1.2.1
-flowType: prompt
+flowType: chain
 sort: 5
 options:
   - title: General
