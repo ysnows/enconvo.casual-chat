@@ -1,5 +1,5 @@
 name: Casual Chat
-version: 0.0.9
+version: 0.1.0
 author: enconvo
 on: { }
 steps:
@@ -22,7 +22,7 @@ steps:
         sort: 2
         messages:
           - role: system
-            content: Casual Chat
+            content: Act as an super ai assistant, Answer as concisely as possible.
           - role: user
             content: '{{contextText|copiedText}}'
           - role: user
