@@ -1,5 +1,5 @@
 name: Casual Chat
-version: 0.1.0
+version: 0.1.1
 author: enconvo
 on: { }
 steps:
@@ -13,7 +13,7 @@ steps:
         messages: [ ]
       Model:
         type: llmModel
-        value: enconvo.chatgpt|--|gpt-3.5-turbo
+        value: llm.default|--|default
         sort: 0
         messages: [ ]
       Messages:
