@@ -2,6 +2,12 @@
   "identifier": "enconvo.blog",
   "versions": [
     {
+      "version": "0.1.0",
+      "desc": "feat: 1. optimize prompt",
+      "url": "https://github.com/ysnows/enconvo.casual-chat/releases/download/v0.1.0/enconvo.casual-chat.enconvoplugin",
+      "minAppVersion": "1.1.8"
+    },
+    {
       "version": "0.0.9",
       "desc": "feat: 1. optimize",
       "url": "https://github.com/ysnows/enconvo.casual-chat/releases/download/v0.0.9/enconvo.casual-chat.enconvoplugin",
