@@ -4,29 +4,14 @@ author: enconvo
 on: { }
 steps:
   - name: ''
-    uses: prompt
+    uses: javascript
+    stream: true
     env:
-      Temperature:
-        type: temperature
-        value: '1.0'
-        sort: 1
-        messages: [ ]
-      Model:
-        type: llmModel
-        value: llm.default|--|default
+      JSFilePath:
+        type: file-path
+        value: index.js
         sort: 0
-        messages: [ ]
-      Messages:
-        type: messages
-        value: ''
-        sort: 2
-        messages:
-          - role: system
-            content: Act as an super ai assistant, Answer as concisely as possible.
-          - role: user
-            content: '{{contextText|copiedText}}'
-          - role: user
-            content: '{{text}}'
+        messages: []
 extensionId: enconvo.casual-chat
 logo: sparkles
 description: Casual chat with ai
@@ -34,7 +19,7 @@ async: false
 homePage: https://github.com/ysnows/enconvo.casual-chat
 appCast: https://raw.githubusercontent.com/ysnows/enconvo.casual-chat/main/appcast.json
 minAppVersion: 1.2.1
-flowType: chain
+flowType: plugin
 sort: 5
 options:
   - title: General
