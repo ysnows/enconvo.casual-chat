@@ -1,6 +1,7 @@
 const browserify = require('browserify')
 const fs = require('fs')
 const tinyify = require('tinyify')
+var tsify = require('tsify');
 
 // 如果不存在，创建 ./dist
 if (!fs.existsSync('./dist')) {
@@ -19,6 +20,7 @@ browserify(['./src/index.js'])
     //         appid: 'enconvo.casual-chat'
     //     }
     // })
+    .plugin(tsify, { noImplicitAny: true })
     .bundle()
     .pipe(fs.createWriteStream('./dist/main.js'))
 

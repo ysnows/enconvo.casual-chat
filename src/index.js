@@ -25,7 +25,7 @@ const {
     let secondDisplayText = text.replace(/\n/g, "\n> ")
     secondDisplayText = `> ${secondDisplayText}\n\n`
 
-    res.write(displayText + secondDisplayText, 'context');
+    await res.write(displayText + secondDisplayText, 'context');
 
     options.verbose = true
     options.stream = true
@@ -36,16 +36,19 @@ const {
     let messages
 
     let inputs = {}
-    const templates = [
-        SystemMessagePromptTemplate.fromTemplate(templateText),
-    ];
+    const templates = [];
+
+    templates.push(SystemMessagePromptTemplate.fromTemplate(templateText))
+
     if (contextText) {
         templates.push(HumanMessagePromptTemplate.fromTemplate("{context}"));
         inputs.context = contextText;
     }
+
+    // const history = new MessagesPlaceholder("history")
+    // templates.push(history)
     templates.push(HumanMessagePromptTemplate.fromTemplate("{text}"));
     inputs.text = text;
-
 
     const template = ChatPromptTemplate.fromPromptMessages(templates)
     messages = await template.formatMessages(inputs)
