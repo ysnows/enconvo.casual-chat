@@ -16,12 +16,16 @@ const {
     console.log(`begin fetch... contextText is ${contextText} text is ${text}`)
 
     // 如果translateText中有换行符，需要添加> 符号
-    const displayText = contextText.replace(/\n/g, "\n> ")
-    res.write(`> ${displayText}\n\n`, 'context');
+    let displayText = ""
+    if (contextText) {
+        displayText = contextText.replace(/\n/g, "\n> ");
+        displayText = `> ${displayText}\n\n`
+    }
 
-    const secondDisplayText = text.replace(/\n/g, "\n> ")
-    res.write(`> ${secondDisplayText}\n\n`, 'context');
+    let secondDisplayText = text.replace(/\n/g, "\n> ")
+    secondDisplayText = `> ${secondDisplayText}\n\n`
 
+    res.write(displayText + secondDisplayText, 'context');
 
     options.verbose = true
     options.stream = true
@@ -31,15 +35,20 @@ const {
 
     let messages
 
-    const template = ChatPromptTemplate.fromPromptMessages([
+    let inputs = {}
+    const templates = [
         SystemMessagePromptTemplate.fromTemplate(templateText),
-        HumanMessagePromptTemplate.fromTemplate("{context}"),
-        HumanMessagePromptTemplate.fromTemplate("{text}"),
-    ])
-    messages = await template.formatMessages({
-        context: contextText,
-        text: contextText,
-    })
+    ];
+    if (contextText) {
+        templates.push(HumanMessagePromptTemplate.fromTemplate("{context}"));
+        inputs.context = contextText;
+    }
+    templates.push(HumanMessagePromptTemplate.fromTemplate("{text}"));
+    inputs.text = text;
+
+
+    const template = ChatPromptTemplate.fromPromptMessages(templates)
+    messages = await template.formatMessages(inputs)
 
     await chat.call(messages, {}, CallbackManager.fromHandlers({
         handleLLMNewToken(token, idx, runId, parentRunId, tags) {
